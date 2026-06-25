@@ -1,0 +1,148 @@
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^StatCard": "@/components/StatCard/StatCard.vue",
+      "^MenuCard": "@/components/MenuCard/MenuCard.vue",
+      "^SuperLayout": "@/components/SuperLayout/SuperLayout.vue",
+      "^SvgIcon": "@/components/SvgIcon/SvgIcon.vue",
+      "^PlayerTabBar": "@/components/PlayerTabBar/PlayerTabBar.vue",
+      "^AppModal": "@/components/AppModal/AppModal.vue",
+      "^FormSelect": "@/components/FormSelect/FormSelect.vue",
+      "^ScoreFlash": "@/components/ScoreFlash/ScoreFlash.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/common/change-password",
+      "style": { "navigationBarTitleText": "修改密码" }
+    },
+    {
+      "path": "pages/super/dashboard",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "仪表盘",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/super/users",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "用户管理",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/super/groups",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "分组管理",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/super/projects",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "项目管理",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/super/scores",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "积分管理",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/super/stats",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "数据统计",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/super/settings",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "系统设置",
+        "animationType": "slide-in-right",
+        "animationDuration": 280
+      }
+    },
+    {
+      "path": "pages/admin/index",
+      "style": { "navigationBarTitleText": "管理首页" }
+    },
+    {
+      "path": "pages/admin/scan-gain",
+      "style": { "navigationBarTitleText": "扫码登记积分" }
+    },
+    {
+      "path": "pages/admin/scan-consume",
+      "style": { "navigationBarTitleText": "扫码核销积分" }
+    },
+    {
+      "path": "pages/admin/records",
+      "style": { "navigationBarTitleText": "项目记录" }
+    },
+    {
+      "path": "pages/admin/profile",
+      "style": { "navigationBarTitleText": "个人中心" }
+    },
+    {
+      "path": "pages/player/home",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "首页" }
+    },
+    {
+      "path": "pages/player/scores",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "我的积分" }
+    },
+    {
+      "path": "pages/player/qrcode",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "我的二维码" }
+    },
+    {
+      "path": "pages/player/profile",
+      "style": { "navigationStyle": "custom", "navigationBarTitleText": "我的" }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "游园会积分系统",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f4f6fb",
+    "animationType": "slide-in-right",
+    "animationDuration": 280
+  },
+  "tabBar": {
+    "color": "#94a3b8",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "height": "0px",
+    "list": [
+      { "pagePath": "pages/player/home", "text": "首页" },
+      { "pagePath": "pages/player/scores", "text": "积分" },
+      { "pagePath": "pages/player/qrcode", "text": "二维码" },
+      { "pagePath": "pages/player/profile", "text": "我的" }
+    ]
+  }
+}
