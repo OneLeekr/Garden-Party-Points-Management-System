@@ -1,0 +1,196 @@
+/**
+ * YYFSS Design System v2
+ */
+
+:root {
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --primary-soft: rgba(37, 99, 235, 0.08);
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --bg-page: #f4f6fb;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-sidebar: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border: #e8edf5;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.12);
+  --radius: 16rpx;
+  --radius-lg: 24rpx;
+  --radius-xl: 32rpx;
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --player-tabbar-height: 56px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #3b82f6;
+    --primary-soft: rgba(59, 130, 246, 0.12);
+    --bg-page: #0b1220;
+    --bg-card: #151f32;
+    --bg-elevated: #1a2740;
+    --bg-sidebar: #111827;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: #243047;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  }
+}
+
+page {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* PWA 全屏适配 */
+html, body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+/* #ifdef H5 */
+@media all and (display-mode: fullscreen), all and (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+html.pwa-standalone body {
+  padding-top: env(safe-area-inset-top);
+}
+/* #endif */
+
+.page-fade-in {
+  animation: pageFadeIn var(--transition) both;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.yy-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  border: 1px solid var(--border);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.yy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: var(--radius);
+  font-size: 30rpx;
+  font-weight: 500;
+  border: none;
+  transition: transform 0.08s ease, opacity 0.08s ease, box-shadow 0.08s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.yy-btn:active:not([disabled]) {
+  transform: scale(0.97);
+  opacity: 0.88;
+}
+
+.yy-btn[disabled],
+.yy-btn.is-loading {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.yy-btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+}
+
+.yy-btn-outline {
+  background: transparent;
+  border: 2rpx solid var(--border);
+  color: var(--text-primary);
+}
+
+.yy-btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.yy-input {
+  height: 88rpx;
+  padding: 0 28rpx;
+  background: var(--bg-page);
+  border: 2rpx solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 28rpx;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.yy-label {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  margin-bottom: 12rpx;
+  display: block;
+  font-weight: 500;
+}
+
+.yy-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.yy-subtitle {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.yy-tag {
+  display: inline-block;
+  padding: 6rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+}
+
+.yy-tag-success { background: rgba(5, 150, 105, 0.12); color: var(--success); }
+.yy-tag-danger { background: rgba(220, 38, 38, 0.12); color: var(--danger); }
+.yy-tag-primary { background: var(--primary-soft); color: var(--primary); }
+
+.yy-empty {
+  text-align: center;
+  padding: 80rpx 0;
+  color: var(--text-muted);
+}
+
+.player-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-bottom: calc(var(--player-tabbar-height) + env(safe-area-inset-bottom, 0px) + 20px);
+  box-sizing: border-box;
+}
+
+.flex-row { display: flex; flex-direction: row; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-1 { flex: 1; }
+.gap-sm { gap: 16rpx; }
+.mt-sm { margin-top: 16rpx; }
+.mt-md { margin-top: 24rpx; }
+.mb-md { margin-bottom: 24rpx; }
+.p-page { padding: 32rpx; }
